@@ -1,5 +1,5 @@
 import React from 'react'
-import { User_Icon } from '../utils/icons'
+import { User_Icon } from '../utils/consts'
 
 const Chatmessage = ({messages}) => {
   return (

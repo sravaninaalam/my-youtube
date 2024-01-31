@@ -1,7 +1,6 @@
 import {useEffect,useState} from 'react'
-import { Youtube_Video_Api } from '../utils/constants'
+import { Youtube_Video_Api } from '../utils/consts'
 import Shimmer from './Shimmer'
-
 import Suggestedvideos from './Suggestedvideos'
 import { Link } from 'react-router-dom'
 

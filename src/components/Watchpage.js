@@ -1,8 +1,8 @@
 import { useSearchParams } from 'react-router-dom'
-// import CommentContainer from './CommentContainer'
-// import Livechat from './Livechat'
-// import Relatedsuggestions from './Relatedsuggestions'
-// import { ChevronDownCircle } from 'lucide-react';
+import CommentContainer from './CommentContainer'
+import Livechat from './Livechat'
+import Relatedsuggestions from './Relatedsuggestions'
+import { ChevronDownCircle } from 'lucide-react';
 import { useEffect,useState } from 'react';
 import Videodetails from './Videodetails';
 import { useDispatch,useSelector } from 'react-redux';
@@ -17,7 +17,7 @@ const Watchpage = () => {
   const toggle=useSelector(store=>store.sidebar.isMenuOpen)
  
   useEffect(()=>{
-        dispatch(closeMenu)
+        dispatch(closeMenu())
   },[videoId])
   return (
     <>
@@ -27,11 +27,11 @@ const Watchpage = () => {
           title="YouTube video player"allowFullScreen>
           </iframe>
           <Videodetails videoId={videoId}/>
-         {/* <CommentContainer/> */}
+         <CommentContainer/>
       </div>
 
 
-           {/* <div className='m-3'>
+           <div className='m-3'>
               <div>
                      <div className='border border-x-black border-t-black mx-2 p-2 bg-slate-100 rounded-lg'>
                         <h2 className='font-bold py-1 ml-2 flex justify-between w-96'
@@ -51,7 +51,7 @@ const Watchpage = () => {
                     <Relatedsuggestions/>
                 </div>
                
-          </div> */}
+          </div>
   </div>
     </>
   )
