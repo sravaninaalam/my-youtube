@@ -38,12 +38,13 @@ const Header = () => {
             </div>
             <div className='col-span-10 ml-16'>
             <form onSubmit={(e)=>e.preventDefault()} className='flex'>
-                
-                <input type='text' placeholder='search' className='my-4 py-2 px-1 w-2/3 border ml-5 border-gray-500 rounded-l-full focus:outline-none'
+                <div className='my-4 py-2 px-1 w-2/3 border  border-gray-500 rounded-l-full focus:outline-none'>
+                <input type='text' placeholder='search' className='w-2/3  px-3 outline-0 '
                 value={searchtext}  onChange={(e)=>setSearchText(e.target.value)}
                 onFocus={()=>setShowSuggestions(true)}
                 />
-                {searchtext&& <span className='my-5 bg-gray-100 font-bold' onClick={()=>setSearchText('')}>X</span>}
+                {searchtext&& <span className='my-5 ml-[29%] items-end font-bold cursor-pointer ' onClick={()=>setSearchText('')}>X</span>}
+              </div>
               <Link to={'/search?search_query='+searchtext}><button className='my-4  bg-gray-100 py-2 px-5  border border-gray-500 rounded-r-full' type='submit' onClick={()=>setShowSuggestions(false)}>🔍</button>
               </Link>
              
