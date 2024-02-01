@@ -9,6 +9,7 @@ const Header = () => {
     const[searchtext,setSearchText]=useState('')
    const[suggestions,setSuggestions]=useState([])
    const[showsuggestions,setShowSuggestions]=useState(false)
+   const [closebutton,setClosebutton]=useState()
    const dispatch=useDispatch()
    const cacheddata=useSelector(store=>store.search)
    useEffect(()=>{
@@ -38,14 +39,16 @@ const Header = () => {
             </div>
             <div className='col-span-10 ml-16'>
             <form onSubmit={(e)=>e.preventDefault()} className='flex'>
-                <input type='text' placeholder='search' className=' my-4 w-1/2 border border-gray-500 rounded-l-full p-1 focus:outline-none'
-                value={searchtext} onChange={(e)=>setSearchText(e.target.value)}
+                
+                <input type='text' placeholder='search' className='my-4 py-2 px-1 w-2/3 border ml-5 border-gray-500 rounded-l-full focus:outline-none'
+                value={searchtext}  onChange={(e)=>setSearchText(e.target.value)}
                 onFocus={()=>setShowSuggestions(true)}
                 />
-                {searchtext&&<span className='my-5 bg-gray-100 font-bold' onClick={()=>setSearchText('')}>X</span>}
-              <Link to={'/search?search_query='+searchtext}><button className='my-4 bg-gray-100 py-1 px-5  border border-gray-500 rounded-r-full' type='submit' onClick={()=>setShowSuggestions(false)}>🔍</button>
+                {searchtext&& <span className='my-5 bg-gray-100 font-bold' onClick={()=>setSearchText('')}>X</span>}
+              <Link to={'/search?search_query='+searchtext}><button className='my-4  bg-gray-100 py-2 px-5  border border-gray-500 rounded-r-full' type='submit' onClick={()=>setShowSuggestions(false)}>🔍</button>
               </Link>
-              <Mic className='ml-5 my-5'/>
+             
+              <Mic className='ml-5 my-6 bg-gray-200 rounded-full'/>
             </form>
                 { showsuggestions&&
                     <div className='w-1/3 bg-white absolute'>
