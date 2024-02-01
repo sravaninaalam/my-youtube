@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import {useState } from 'react'
 import {Link} from 'react-router-dom'
 import { Search_By_Keyword } from '../utils/consts'
 import Searchcard from './Searchcard'

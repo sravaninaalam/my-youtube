@@ -9,7 +9,6 @@ const Header = () => {
     const[searchtext,setSearchText]=useState('')
    const[suggestions,setSuggestions]=useState([])
    const[showsuggestions,setShowSuggestions]=useState(false)
-   const [closebutton,setClosebutton]=useState()
    const dispatch=useDispatch()
    const cacheddata=useSelector(store=>store.search)
    useEffect(()=>{

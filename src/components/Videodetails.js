@@ -1,6 +1,5 @@
 import {useEffect,useState} from 'react'
 import { timeDifference,countViews } from '../utils/helper';
-// import { timeDifference,countViews } from '../utils/helper'
 import { ThumbsUp,ThumbsDown, Forward } from 'lucide-react';
 import { Search_By_Id } from '../utils/consts';
 const Videodetails = ({videoId}) => {
