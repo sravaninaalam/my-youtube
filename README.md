@@ -1,4 +1,4 @@
-Video streaming app nothing but VIEWTUBE just like YouTube. Viewtube is not just a clone of the original YOUTUBE . It is dynamic and highly scalable
+Video streaming app nothing but VIEWTUBE just like YouTube. Viewtube is not just a clone of the original YOUTUBE. It is dynamic and highly scalable
 
 Key Features:
 
@@ -13,6 +13,8 @@ Key Features:
 •	Lightning-fast  search results with debouncing and caching technique
 
 •	Nested Comments
+
+•	High performant live chat
 
 •	Shimmer UI
 
