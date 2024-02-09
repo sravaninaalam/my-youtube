@@ -29,3 +29,70 @@ export const Youtube_Video_Api=
 export const Youtube_Icon="https://yt3.ggpht.com/a/AATXAJwPsenHD5u98E2kS48C-YZpIteYcLkBFU7b8Q=s900-c-k-c0xffffffff-no-rj-mo"
 
 export const User_Icon="https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
+
+export const commentsData=[
+  {
+   name:"sravani",
+   text:"dummy comment for now",
+   replies:[
+     {
+       name:"sravani",
+       text:"dummy comment for now"
+      },
+      {
+       name:"sravani",
+       text:"dummy comment for now",
+       replies:[
+         {
+           name:"sravani",
+           text:"dummy comment for now"
+          },
+          {
+           name:"sravani",
+           text:"dummy comment for now",
+           replies:[
+             {
+               name:"sravani",
+               text:"dummy comment for now"
+              },
+              {
+               name:"sravani",
+               text:"dummy comment for now"
+              }
+           ]
+          }
+       ]
+      }
+   ]
+  },
+   {
+   name:"sravani",
+   text:"dummy comment for now"
+  },
+  {
+   name:"sravani",
+   text:"dummy comment for now",
+   replies:[
+     {
+       name:"sravani",
+       text:"dummy comment for now"
+      },
+      {
+       name:"sravani",
+       text:"dummy comment for now",
+       replies:[
+         {
+           name:"sravani",
+           text:"dummy comment for now"
+          },
+          {
+           name:"sravani",
+           text:"dummy comment for now"
+          }
+       ]
+      }
+      
+   ]
+  }
+ 
+ ]

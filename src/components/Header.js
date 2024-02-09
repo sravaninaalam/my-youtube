@@ -1,33 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { Hamburger_Icon, User_Icon, Youtube_Icon, Youtube_Suggestions_CORS } from '../utils/consts'
+import React, { useState } from 'react'
+import { Hamburger_Icon, User_Icon, Youtube_Icon } from '../utils/consts'
 import {Link} from 'react-router-dom'
-import {useDispatch,useSelector} from 'react-redux'
-import { cacheResults } from '../redux/searchSlice'
+import {useDispatch} from 'react-redux'
 import { Mic, Bell, Search} from 'lucide-react';
 import { toggleMenu } from '../redux/sidebarSlice'
+import useCachedDeboncing from '../customhooks/useCachedDeboncing'
 const Header = () => {
     const[searchtext,setSearchText]=useState('')
-   const[suggestions,setSuggestions]=useState([])
-   const[showsuggestions,setShowSuggestions]=useState(false)
+    const[showsuggestions,setShowSuggestions]=useState(false)
+   
+    const suggestions=useCachedDeboncing(searchtext)
    const dispatch=useDispatch()
-   const cacheddata=useSelector(store=>store.search)
-   useEffect(()=>{
-    const timer=setTimeout(()=>{
-        if(cacheddata[searchtext]){
-            setSuggestions(cacheddata[searchtext])
-        }
-        else{
-            getSerachRes()}},500)
-    
-    return()=>clearTimeout(timer)
-
-   },[searchtext])
-   async function getSerachRes(){
-      const data=await fetch(Youtube_Suggestions_CORS+searchtext)
-      const json=await data.json()
-    setSuggestions(json[1])
-    dispatch(cacheResults({[searchtext]:json[1]}))
-   }
   return (
    <>
         <div className='grid grid-flow-col shadow-lg items-center'>

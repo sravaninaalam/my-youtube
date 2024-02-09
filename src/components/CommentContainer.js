@@ -1,74 +1,9 @@
-import { useEffect, useState } from "react"
 import Comment from "./Comment"
 import Realcomments from "./Realcomments"
-import { COMMENTS_API } from "../utils/consts"
 import {useSearchParams} from 'react-router-dom'
-const commentsData=[
-    {
-     name:"sravani",
-     text:"dummy comment for now",
-     replies:[
-       {
-         name:"sravani",
-         text:"dummy comment for now"
-        },
-        {
-         name:"sravani",
-         text:"dummy comment for now",
-         replies:[
-           {
-             name:"sravani",
-             text:"dummy comment for now"
-            },
-            {
-             name:"sravani",
-             text:"dummy comment for now",
-             replies:[
-               {
-                 name:"sravani",
-                 text:"dummy comment for now"
-                },
-                {
-                 name:"sravani",
-                 text:"dummy comment for now"
-                }
-             ]
-            }
-         ]
-        }
-     ]
-    },
-     {
-     name:"sravani",
-     text:"dummy comment for now"
-    },
-    {
-     name:"sravani",
-     text:"dummy comment for now",
-     replies:[
-       {
-         name:"sravani",
-         text:"dummy comment for now"
-        },
-        {
-         name:"sravani",
-         text:"dummy comment for now",
-         replies:[
-           {
-             name:"sravani",
-             text:"dummy comment for now"
-            },
-            {
-             name:"sravani",
-             text:"dummy comment for now"
-            }
-         ]
-        }
-        
-     ]
-    }
-   
-   ]
+import useCommentsApi from "../customhooks/useCommentsApi"
+import { commentsData } from "../utils/consts"
+
 
 
 
@@ -80,17 +15,9 @@ const CommentList=({comments})=>{
 
 
 const CommentContainer = () => {
-  const[comments,setComments]=useState([])
   const [searchparams]=useSearchParams()
   const videoId=searchparams.get("v")
-  useEffect(()=>{
-    getCommentsData()
-   },[])
-   async function getCommentsData(){
-       const data=await fetch(COMMENTS_API+videoId)
-       const json=await data.json()
-       setComments(json?.items)
-   }
+  const comments=useCommentsApi(videoId)
    if(!comments) return  <CommentList comments={commentsData}/>
   return (
    <>
