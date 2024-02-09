@@ -21,6 +21,7 @@ export const Youtube_Video_Api=
   Google_Api_Key +
   "&q=trendingshorts";
 
+  export const COMMENTS_API="https://www.googleapis.com/youtube/v3/commentThreads?key="+Google_Api_Key+"&textFormat=plainText&part=snippet&maxResults=100&videoId="
 
 
   export const Hamburger_Icon="https://static.vecteezy.com/system/resources/previews/002/292/406/original/hamburger-menu-line-icon-free-vector.jpg"
