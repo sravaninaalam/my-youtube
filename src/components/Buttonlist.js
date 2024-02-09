@@ -2,6 +2,7 @@ import {useState } from 'react'
 import {Link} from 'react-router-dom'
 import { Search_By_Keyword } from '../utils/consts'
 import Searchcard from './Searchcard'
+import Shimmer from './Shimmer'
 function Buttonslist(){
     const btn_list=["All","Gaming","Live","React Js","Akshay Saini","Music","Cricket","Mix","Songs","Cooking","Mahishivan"]
     const[videos,setVideos]=useState([])
@@ -15,7 +16,7 @@ function Buttonslist(){
         setVideos(json.items)
         // console.log(keyword,"clicked")
     }
-    return(
+    return !videos?<Shimmer/>:(
         <>
         <div className="flex">
             {btn_list.map((btn,index)=><Link to={'/search?search_query='+btn} key={index}>
